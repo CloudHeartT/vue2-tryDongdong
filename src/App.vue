@@ -9,15 +9,20 @@
 		     </div>
 		     <footer-nav :showNav="showNav"></footer-nav>
 		  	</div>
-		  	<div class="mainByFoot swiper-slide" style="background-color: red;height: 526px;">{{changeMainTwo}}</div>
+		  		<!--主页右划-->
+		  	<div class="mainByFoot swiper-slide" style="height: 526px;">
+		  		<main-right @clickPreSwiper="preSwiper" @clickNextSwiper="nextSwiper"></main-right>
+		  	</div>
 		  </div>
 		</div>
   </div>
 </template>
 
 <script>
+	import Swiper from '@a/js/swiper.min.js'
+	
 import footerNav from '@c/footerNav.vue'
-import Swiper from '@a/js/swiper.min.js'
+import mainRight from '@c/mainRight.vue'
 
 export default {
   name: 'app',
@@ -32,7 +37,8 @@ export default {
   	}
   },
   components:{
-  	footerNav
+  	footerNav,
+  	mainRight
   },
   watch: {
           '$route':function(){
@@ -50,10 +56,16 @@ export default {
       }
    	},
    	initSwiper(){
-   		var mySwiper = new Swiper('.swiper-container',{
+   		this.mySwiper = new Swiper('.swiper-container',{
   		initialSlide :1,
   		autoHeight:true
 		})
+   	},
+   	preSwiper(){
+				this.mySwiper._slidePrev();
+   	},
+   	nextSwiper(){
+				this.mySwiper._slideNext();
    	}
    },
    created () {

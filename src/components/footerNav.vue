@@ -57,6 +57,7 @@ export default{
   },
   computed: {
   	route () {
+  		debugger
   		return this.$route.path
   	}
   },
