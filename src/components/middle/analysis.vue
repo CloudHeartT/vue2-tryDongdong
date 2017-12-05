@@ -22,7 +22,6 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
   data () {
     return {
       msg: 'analysis page'

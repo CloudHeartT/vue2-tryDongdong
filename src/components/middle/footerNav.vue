@@ -4,40 +4,40 @@
   		<nav class="nav nav-me" :class="{'cur-page': route === '/me'}">
 			<router-link to="me">
 				<div class="nav-icon">
-					<img v-show="route !== '/me'" src="../assets/images/mew.svg" alt="">
-					<img v-show="route === '/me'" src="../assets/images/meo.svg" alt="">
+					<img v-show="route !== '/me'" src="../../assets/images/mew.svg" alt="">
+					<img v-show="route === '/me'" src="../../assets/images/meo.svg" alt="">
 				</div>
 			</router-link>
 	  	</nav>
 	  	<nav class="nav nav-analysis" :class="{'cur-page': route === '/analysis'}">
 			<router-link to="analysis">
 				<div class="nav-icon">
-					<img v-show="route !== '/analysis'" src="../assets/images/analysisw.svg" alt="">
-					<img v-show="route === '/analysis'" src="../assets/images/analysiso.svg" alt="">
+					<img v-show="route !== '/analysis'" src="../../assets/images/analysisw.svg" alt="">
+					<img v-show="route === '/analysis'" src="../../assets/images/analysiso.svg" alt="">
 				</div>
 			</router-link>
 	  	</nav>
 	  	<nav class="nav nav-run" :class="{'cur-page': route === '/'}">
 	  		<router-link to="/">
 	  			<div class="nav-icon">
-	  				<img v-show="route !== '/'" src="../assets/images/runw.svg" alt="">
-	  				<img v-show="route === '/'" src="../assets/images/runo.svg" alt="">
+	  				<img v-show="route !== '/'" src="../../assets/images/runw.svg" alt="">
+	  				<img v-show="route === '/'" src="../../assets/images/runo.svg" alt="">
 	  			</div>
 	  		</router-link>
 	  	</nav>
 	  	<nav class="nav nav-goal" :class="{'cur-page': route === '/goal'}">
 			<router-link to="goal">
 				<div class="nav-icon">
-					<img v-show="route !== '/goal'" src="../assets/images/goalw.svg" alt="">
-					<img v-show="route === '/goal'" src="../assets/images/goalo.svg" alt="">
+					<img v-show="route !== '/goal'" src="../../assets/images/goalw.svg" alt="">
+					<img v-show="route === '/goal'" src="../../assets/images/goalo.svg" alt="">
 				</div>
 			</router-link>
 	  	</nav>
 	  	<nav class="nav nav-find" :class="{'cur-page': route === '/find'}">
 	  		<router-link to="find">
 	  			<div class="nav-icon">
-	  				<img v-show="route !== '/find'" src="../assets/images/findw.svg" alt="">
-	  				<img v-show="route === '/find'" src="../assets/images/findo.svg" alt="">
+	  				<img v-show="route !== '/find'" src="../../assets/images/findw.svg" alt="">
+	  				<img v-show="route === '/find'" src="../../assets/images/findo.svg" alt="">
 	  			</div>
 	  		</router-link>
 	  	</nav>

@@ -2,9 +2,9 @@
 	<section>
 		<section class="top">
 			<div  style="width: 32px;height: 22x;" @click="swiperPrevClick">
-				<img src="../assets/images/leftTriangle.svg" />
+				<img src="../../assets/images/leftTriangle.svg" />
 	  		</div>
-			<div style="color: white;margin-left: 120px">{{test}}</div>
+			<div style="color: white;margin-left: 120px;margin-top: 5px;">{{test}}</div>
 		</section>
 		<section style="margin-top: 50px ;" :style="{height: screenHeight + 'px',width:screenWidth + 'px'}">
 			<baidu-map></baidu-map>
@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import baiduMap from '@c/baiduMap.vue'
+import baiduMap from '@c/right/baiduMap.vue'
 
 	export default{
 		data(){
@@ -45,7 +45,7 @@ import baiduMap from '@c/baiduMap.vue'
 <style>
 	.top {
 	/*background-color: #fff; 白色*/
-	background-color: black;
+	background-color: darkslategray;
 	position: fixed;
 	width: 100%;
 	top: 0px;

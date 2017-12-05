@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-import analysis from '@c/analysis'
+import mainMiddle from '@v/mainMiddle'
+import analysis from '@c/middle/analysis'
 
 Vue.use(Router)
 
@@ -9,8 +9,8 @@ Vue.use(Router)
 const routes = [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'mainMiddle',
+      component: mainMiddle
     },
     {
     	path:'/analysis',

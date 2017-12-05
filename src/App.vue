@@ -21,8 +21,8 @@
 <script>
 	import Swiper from '@a/js/swiper.min.js'
 	
-import footerNav from '@c/footerNav.vue'
-import mainRight from '@c/mainRight.vue'
+import footerNav from '@c/middle/footerNav.vue'
+import mainRight from '@c/right/mainRight.vue'
 
 export default {
   name: 'app',
