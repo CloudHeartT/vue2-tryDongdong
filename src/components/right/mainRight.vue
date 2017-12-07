@@ -6,7 +6,7 @@
 	  		</div>
 			<div style="color: white;margin-left: 120px;margin-top: 5px;">{{test}}</div>
 		</section>
-		<section style="margin-top: 50px ;" :style="{height: screenHeight + 'px',width:screenWidth + 'px'}">
+		<section  :style="{height: screenHeight + 'px',width:screenWidth + 'px'}">
 			<baidu-map></baidu-map>
 		</section>
 	</section>
@@ -20,7 +20,7 @@ import baiduMap from '@c/right/baiduMap.vue'
 			return{
 				test:"走跑运动",
 				screenWidth :document.documentElement.clientWidth ,
-  				screenHeight :document.documentElement.clientHeight-50 ,
+  				screenHeight :document.documentElement.clientHeight + 50 ,
 			}
 		},
 		props:[
@@ -43,18 +43,7 @@ import baiduMap from '@c/right/baiduMap.vue'
 </script>
 
 <style>
-	.top {
-	/*background-color: #fff; 白色*/
-	background-color: darkslategray;
-	position: fixed;
-	width: 100%;
-	top: 0px;
-	height: 50px;
-	display: -webkit-box; 
-	padding-top: 7px;
-	box-sizing: border-box;
-	z-index: 10000;
-},
+
 .triangle{
 	width: 22px;
     height: 22px;
