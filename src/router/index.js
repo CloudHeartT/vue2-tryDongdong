@@ -6,6 +6,9 @@ import Me from '@v/middle/me'
 import Goal from '@v/middle/goal'
 import Find from '@v/middle/find'
 
+/*children*/
+import meRouter from '@v/middle/me/index'
+
 Vue.use(Router)
 
 
@@ -21,7 +24,8 @@ const routes = [
     },{
     	path:'/me',
     	name:'me',
-    	component:Me
+    	component:Me,
+    	children:meRouter
     },{
     	path:'/goal',
     	name:'goal',
@@ -37,3 +41,7 @@ const routes = [
 export default new Router({
   routes: routes
 })
+
+
+
+/*require('./views/router-cable-reference-base'),*/

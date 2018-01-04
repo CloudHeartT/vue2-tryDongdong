@@ -22,10 +22,18 @@
 		color: white;
 		margin-left: calc(45%);
 		margin-top: calc( var(--base-top-margin));
+		position: absolute;
 	}
 		
 .top-title-other{
 		color: white;
 		margin-left: calc(50% - 2* var(--base-triangle));
 		margin-top: calc( var(--base-top-margin));
+		position: absolute;
 	}
+
+
+/*全部页面颜色*/
+.base{
+	background-color: dark;
+}

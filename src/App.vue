@@ -1,5 +1,5 @@
 <template>
-  <div id="app" :style="{height: screenHeight + 'px',width:screenWidth + 'px'}"><!--所有页面的入口-->
+  <div id="app" :style="{height: screenHeight + 'px',width:screenWidth + 'px'}" class="base"><!--所有页面的入口-->
   	<!--note:加入swiper后，改变页面大小必须手动刷新，页面布局才会更改-->
   	<div class="swiper-container">
   		<div class="swiper-wrapper">

@@ -62,6 +62,7 @@
 	.calDiv{
 		margin-left: calc(50% - var(--base-left-margin));
 		margin-top: calc( var(--base-top-margin));
+		position: absolute;
 	}
 	.calendarDiv{
 		position: fixed !important; /*使用内置的出现了问题 calendar的参照对象不是屏幕而是父元素*/

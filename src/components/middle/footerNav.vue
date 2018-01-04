@@ -72,7 +72,7 @@ export default{
 <style>
 .footer {
 	/*background-color: #fff; 白色*/
-	background-color: black;
+	background-color: darkslategray;
 	position: fixed;
 	width: 100%;
 	bottom: 0px;
@@ -128,7 +128,7 @@ export default{
 	content: "我的";
 }
 .go-back {
-	background: #ff2c43;
+	/*background: #ff2c43;*/
 }
 .back {
 	font-size: 30px;
