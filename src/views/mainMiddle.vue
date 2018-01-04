@@ -5,7 +5,7 @@
 			<datepicker style="float: right;" :calendar-class="calendarDiv" :format="format" :value="date" :language="language"  :id="id" ></datepicker>
 		</div>
 		<div style="margin-top: 50px;">
-		<hello-world></hello-world>
+		<home></home>
 		</div>
 	</section>
 </template>
@@ -13,7 +13,7 @@
 <script>
 	import Datepicker from 'vuejs-datepicker';
 	
-	import helloWorld from '@c/helloWorld.vue'
+	import Home from '@c/middle/home/helloWorld.vue'
 	
 	export default{
 		data(){
@@ -30,7 +30,7 @@
 			}
 		},
 		components:{
-			helloWorld,
+			Home,
   			Datepicker
 		},
 		methods:{
@@ -72,21 +72,11 @@
 	}
 	
 	
-	.top {
-	/*background-color: #fff; 白色*/
-	background-color: darkslategray;
-	width: calc(100%);
-	top: 0px;
-	height: 50px;
-	display: -webkit-box; 
-	padding-top: 7px;
-	box-sizing: border-box;
-	z-index: 10000;
-}
+
 </style>
 <style scoped>
 .calendarImg{
-	/*float: left;*/
+	float: left;
 	width: 20px;
 }	
 </style>

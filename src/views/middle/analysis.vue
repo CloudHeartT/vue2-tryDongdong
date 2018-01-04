@@ -1,4 +1,8 @@
 <template>
+	<section class="analysis">
+	<section class="top">
+		<div class="top-title">{{title}}</div>
+	</section>
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
@@ -18,12 +22,14 @@
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
     </ul>
   </div>
+  </section>
 </template>
 
 <script>
 export default {
   data () {
     return {
+    	title:'分析',
       msg: 'analysis page'
     }
   }

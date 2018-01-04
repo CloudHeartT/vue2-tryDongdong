@@ -3,7 +3,10 @@
   	<!--note:加入swiper后，改变页面大小必须手动刷新，页面布局才会更改-->
   	<div class="swiper-container">
   		<div class="swiper-wrapper">
-  		 <div class="mainByFoot swiper-slide" style="background-color: red;height: 526px;">{{changeMainOne}}</div>
+  		 	<!--主页左划-->
+		  	<div class="mainByFoot swiper-slide" :style="{height: screenHeight + 'px',width:screenWidth + 'px'}">
+		  		<main-left @clickNextSwiper="nextSwiper"></main-left>
+		  	</div>
 		  	<div class="mainByFoot swiper-slide"><!--主页面（由底部导航栏控制的页面）-->
 		     <div class="main" :style="{height: screenHeight + 'px',width:screenWidth + 'px'}"> 
 		      <router-view></router-view>
@@ -11,8 +14,8 @@
 		     <footer-nav :showNav="showNav"></footer-nav>
 		  	</div>
 		  		<!--主页右划-->
-		  	<div class="mainByFoot swiper-slide" style="height: 526px;">
-		  		<main-right @clickPreSwiper="preSwiper" @clickNextSwiper="nextSwiper"></main-right>
+		  	<div class="mainByFoot swiper-slide" :style="{height: screenHeight + 'px',width:screenWidth + 'px'}">
+		  		<main-right @clickPreSwiper="preSwiper" ></main-right>
 		  	</div>
 		  </div>
 		</div>
@@ -23,7 +26,8 @@
 	import Swiper from '@a/js/swiper.min.js'
 	
 import footerNav from '@c/middle/footerNav.vue'
-import mainRight from '@c/right/mainRight.vue'
+import mainRight from '@v/mainRight.vue'
+import mainLeft from '@v/mainLeft.vue'
 
 export default {
   name: 'app',
@@ -31,15 +35,14 @@ export default {
   	return{
   		showNav:true,
   		screenWidth :document.documentElement.clientWidth ,
-  		screenHeight :document.documentElement.clientHeight ,
-  		changeMainOne:"111我是swiper前的页面",
-  		changeMainTwo:"222我是swiper后的页面"
+  		screenHeight :document.documentElement.clientHeight
 			
   	}
   },
   components:{
   	footerNav,
-  	mainRight
+  	mainRight,
+  	mainLeft
   },
   watch: {
           '$route':function(){
