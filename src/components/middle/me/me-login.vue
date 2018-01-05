@@ -1,7 +1,7 @@
 <template>
 	<!--切换路由的两种方式: 1、router-link :to   2、this.$router.push('xxx')-->
 <!--<router-link :to ="{name:'detail',params:{id:item.mID}}">   <!--此处的name为route定义页面的路由的name-->
-<router-link :to="{ path: '@v/middle/me/login.vue'}" class="me-r-class">
+<router-link :to="{ name: 'login'}" class="me-r-class">
 	<div class="me-login">
 		<img class="imgClass" src="../../../assets/images/login.svg"/>
 		<div class="contentClass">{{content}}</div>

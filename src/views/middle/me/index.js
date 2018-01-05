@@ -1,5 +1,7 @@
+import Login from '@v/middle/me/login'
+
 const routes = [
-    { name:'login',path: '/me/login', component: require('./login.vue') }
+    { name:'login',path: '/me/login', component: Login }
 ]
 
 export default routes
