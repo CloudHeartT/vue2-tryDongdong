@@ -1,12 +1,12 @@
 <template>
 		<div class="form">
 	      <ul class="tab-group" @click="changeTab">
-	        <li class="tab" :class="{'active':show}"><a id="signA">Sign Up</a></li>
+	        <li class="tab" :class="{'active':show}"><a sign='signUp'>Sign Up</a></li>
 	        <li class="tab" :class="{'active':!show}"><a>Log In</a></li>
 	      </ul>
 	      
 	      <div class="tab-content">
-	        <div id="signup" :class="{'active':show}">   
+	        <section id="signup" v-show="show">   
 	          <h1>Sign Up for Free</h1>
 	          
 	          <form action="/" method="post">
@@ -43,13 +43,13 @@
 	            <input type="password"required autocomplete="off"/>
 	          </div>
 	          
-	          <button type="submit" class="button button-block"/>Get Started</button>
+	          <button type="submit" class="button button-block">Get Started</button>
 	          
 	          </form>
 	
-	        </div>
+	        </section>
 	        
-	        <div id="login" :class="{'active':!show}">   
+	        <section id="login" v-show="!show">   
 	          <h1>Welcome Back!</h1>
 	          
 	          <form action="/" method="post">
@@ -70,11 +70,11 @@
 	          
 	          <p class="forgot"><a href="#">Forgot Password?</a></p>
 	          
-	          <button class="button button-block"/>Log In</button>
+	          <button class="button button-block">Log In</button>
 	          
 	          </form>
 	
-	        </div>
+	        </section>
 	        
 	      </div><!-- tab-content -->
 	      
@@ -98,7 +98,7 @@ import '@a/css/login.css'
 		methods:{
 			changeTab(event){
 				debugger;
-				event.target.id('sign') ? this.show = true : this.show = false
+				event.target.getAttribute('sign') ? this.show = true : this.show = false
 			}/*,
 			loginFunc(event){
 				debugger
