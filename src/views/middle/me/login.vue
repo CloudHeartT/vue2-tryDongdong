@@ -52,25 +52,23 @@
 	        <section id="login" v-show="!show">   
 	          <h1>Welcome Back!</h1>
 	          
-	          <form action="/" method="post">
+	          <form <!--@submit.prevent="submit"-->>
 	          
 	            <div class="field-wrap">
-	            <label>
-	              Email Address<span class="req">*</span>
+	            <label>UserName<span class="req">*</span>
 	            </label>
-	            <input type="email"required autocomplete="off"/>
+	            <input type="name"required autocomplete="off" v-model="loginText.username"/>
 	          </div>
 	          
 	          <div class="field-wrap">
-	            <label>
-	              Password<span class="req">*</span>
+	            <label>Password<span class="req">*</span>
 	            </label>
-	            <input type="password"required autocomplete="off"/>
+	            <input type="password"required autocomplete="off" v-model="loginText.password"/>
 	          </div>
 	          
 	          <p class="forgot"><a href="#">Forgot Password?</a></p>
 	          
-	          <button class="button button-block">Log In</button>
+	          <button class="button button-block" @click="loginBtn">Log In</button>
 	          
 	          </form>
 	
@@ -82,7 +80,8 @@
 </template>
 
 <script>
-import '@a/css/login.css'
+	import '@a/css/login.css'
+	import { mapActions , mapMutations } from 'vuex'
 
 	export default{
 		name:'login',
@@ -92,14 +91,27 @@ import '@a/css/login.css'
 				lastName: 'Last Name',
 				email: 'Email Adress',
 				password: 'Password',
-				show:true
+				show:true,
+				loginText :{}
 			}
 		},
 		methods:{
+			...mapActions([
+				'loginAsync'
+			]),
 			changeTab(event){
 				debugger;
 				event.target.getAttribute('sign') ? this.show = true : this.show = false
-			}/*,
+			},
+			loginBtn(){
+				debugger;
+				console.log(this.loginText);
+				this.$store.dispatch('loginAsync',{user:this.loginText});
+			}
+			
+			
+			
+			/*,
 			loginFunc(event){
 				debugger
 				let _this = this

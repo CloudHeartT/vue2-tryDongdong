@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-//import store from './store'
+import store from './store'  //状态管理
 
 import '@a/css/swiper.min.css'
 import '@a/css/common.css'
@@ -20,6 +20,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
   components: { App }
 })
