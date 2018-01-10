@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import axios from 'axios'
-
+import common from '@a/js/common.js'
 
 export default {
 	

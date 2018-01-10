@@ -1,8 +1,11 @@
 import Vue from 'vue'
 
-/**
- *  获取api url
- */
-function getAPI(method) {
-	return '/myboot' + method
+
+export default {
+	/**
+	 *  获取api url
+	 */
+	getAPI:function(method){
+		return '/myboot' + method
+	}
 }

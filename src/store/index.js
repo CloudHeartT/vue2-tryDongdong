@@ -3,7 +3,6 @@ import Vuex from 'vuex'
 import loginActions from './login/actions'
 import loginMutations from './login/mutations'
 
-
 Vue.use(Vuex);
 
 //loading
@@ -13,7 +12,7 @@ const login = {
 	state:{
 		username : '',
 		password : '',
-		postUrl : '/account/login'
+		postUrl : '/login'//bootdo
 	},
 	actions : loginActions,
 	mutations : loginMutations

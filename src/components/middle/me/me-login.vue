@@ -30,16 +30,16 @@
 		float: left;
 		margin-top: 10px;
 	}
+		.contentClass{
+		color: white;
+		line-height: 80px;
+		size: a4;
+	}
 	.me-login {
 	/*background-color: #fff; 白色*/
 	background-color: #575757;
 	width: calc(100%);
 	height: 80px;
-	margin-top: 50px;
+	margin-top: 5px;
 }
-	.contentClass{
-		color: white;
-		line-height: 80px;
-		size: a4;
-	}
 </style>
