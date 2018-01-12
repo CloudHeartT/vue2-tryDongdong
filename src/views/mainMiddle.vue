@@ -13,7 +13,7 @@
 <script>
 	import Datepicker from 'vuejs-datepicker';
 	
-	import Home from '@c/middle/home/helloWorld.vue'
+	import Home from '@c/middle/home/home.vue'
 	
 	export default{
 		data(){

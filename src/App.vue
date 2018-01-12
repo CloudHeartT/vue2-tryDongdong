@@ -51,7 +51,7 @@ export default {
         },
    methods:{
    	routeChange(){
-   		debugger
+   		//debugger
    		let path = this.$route.path
    		if (path === '/' || path === '/analysis' || path === '/me' || path === '/find' || path === '/goal') {
         this.showNav = true
@@ -76,7 +76,7 @@ export default {
     this.routeChange()
   },
   mounted () {
-  	debugger
+  	//debugger
   	console.log(document.documentElement.clientWidth)//屏幕宽度
   	console.log(document.documentElement.clientHeight)//屏幕高度
   	
