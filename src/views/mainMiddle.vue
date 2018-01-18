@@ -1,11 +1,13 @@
 <template>
-	<section class="top">
-		<div class="calDiv"> 
-			<img class="calendarImg"  src="../assets/images/calendar.svg"/>			
-			<datepicker style="float: right;" :calendar-class="calendarDiv" :format="format" :value="date" :language="language"  :id="id" ></datepicker>
-		</div>
+	<section class="mainMiddle">
+		<section class="top">
+			<div class="calDiv"> 
+				<img class="calendarImg"  src="../assets/images/calendar.svg"/>			
+				<datepicker style="float: right;" :calendar-class="calendarDiv" :format="format" :value="date" :language="language"  :id="id" ></datepicker>
+			</div>
+		</section>
 		<div style="margin-top: 50px;">
-		<home></home>
+			<home></home>
 		</div>
 	</section>
 </template>

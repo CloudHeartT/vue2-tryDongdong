@@ -1,13 +1,35 @@
 <template>
 	<section class="home">
-  <div id="percent">
-	<vm-progress :percentage="percent" :type="type" :stroke-color="sc" :width="width"></vm-progress>
-  </div> 
+	  <div class="simpleInfo">
+		<ul class="si-ui">
+			<li class="si-li">大卡</li>
+			<li class="si-li">运动时长</li>
+			<li class="si-li">公里数</li>
+		</ul>
+		<ul class="si-ui">
+			<li class="si-li"><i-count-up :start="0" :end="si.calorie" :decimals="0" :duration="2.5" :options="options"></i-count-up></li>
+			<li class="si-li">
+				<i-count-up :start="0" :end="si.sportTimeH" :decimals="0" :duration="2.5" :options="options"></i-count-up>
+				h<i-count-up :start="0" :end="si.sportTimeM" :decimals="0" :duration="2.5" :options="options"></i-count-up>
+				m </li>
+			<li class="si-li"><i-count-up :start="0" :end="si.sportKilo" :decimals="1" :duration="2.5" :options="options"></i-count-up></li>
+		</ul>
+	  </div>	
+	  <div id="percent" style="">
+		<vm-progress :percentage="percent" :type="type" :stroke-color="sc" :width="width" >
+			<slot>
+				 <div class="iCountUp">
+				    <i-count-up :start="0" :end="80" :decimals="0" :duration="2.5" :options="options" ></i-count-up>
+				  </div>
+			</slot>
+		</vm-progress>
+	  </div> 
 	</section>
 </template>
 
-<script>
+<script type="text/babel">
 import { mapActions } from 'vuex'
+import ICountUp from 'vue-countup-v2';
 export default {
   name: 'Home',
   data () {
@@ -16,9 +38,26 @@ export default {
       percent:0,
       type:"circle",
       sc:"orange",
-      width:210
+      width:210,
+      options: {
+	      useEasing: true,
+	      useGrouping: true,
+	      separator: ',',
+	      decimal: '.',
+	      prefix: '',
+	      suffix: ''
+      },
+      si:{
+      	calorie:70,
+      	sportTimeH:2,
+      	sportTimeM:30,
+      	sportKilo:2.6
+      }
     }
   },
+  components: {
+      ICountUp
+    },
   methods:{
   	...mapActions([
 				'homeAsync'
@@ -34,7 +73,10 @@ export default {
 			console.log("p1="+self.percent);
 			self.percent = val;
 		}, 1000);
-	}
+	},
+	callback: function(ins) {
+        ins.update(ins.endVal + 100);
+    }
   },
   computed: {
   getNewPercent() {
@@ -60,23 +102,27 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
+.home{
+	width: calc(100%);
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+.simpleInfo{
+	width: calc(100%);
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+.si-ul{
+	width: calc(100%);
 }
-a {
-  color: #42b983;
+.si-li{
+	float: left;
+	text-align: center;
+	width: calc(33.3%)
+}
+.vm-progress{
+	margin-left: calc(25%);
+	margin-top: 20px;
 }
 
 
-
+/*进度条*/
 .vue-progress-path path {
   stroke-width: 12;
 }
@@ -88,4 +134,11 @@ a {
 .vue-progress-path .background {
   stroke: #edd;
 }
+
+/*countUp.js*/
+.iCountUp {
+    font-size: 2em;
+    margin: 0;
+    color: #4d63bc;
+  }
 </style>

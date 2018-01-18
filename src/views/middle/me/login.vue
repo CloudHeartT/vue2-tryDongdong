@@ -24,13 +24,6 @@
 	              <input type="text"required autocomplete="off"/>
 	            </div>
 	          </div>
-				<!--<div class="field-wrap">
-				    <label>性别：</label>
-				    <input id="sex01" type="radio" value="1" v-model="sex">
-				    <label for="sex01">男</label>
-				    <input id="sex02" type="radio" value="2" v-model="sex">
-				    <label for="sex02">女</label>
-				</div>-->
 	          <div class="field-wrap">
 	            <label>{{email}}<span class="req">*</span>
 	            </label>
