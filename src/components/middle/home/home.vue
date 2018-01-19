@@ -23,13 +23,19 @@
 				  </div>
 			</slot>
 		</vm-progress>
-	  </div> 
+	  </div>
+	  <div id="myChart" ></div>
 	</section>
 </template>
 
 <script type="text/babel">
 import { mapActions } from 'vuex'
 import ICountUp from 'vue-countup-v2';
+
+// 引入基本模板
+let echarts = require('echarts/lib/echarts')
+// 引入柱状图组件
+require('echarts/lib/chart/bar')
 export default {
   name: 'Home',
   data () {
@@ -76,6 +82,71 @@ export default {
 	},
 	callback: function(ins) {
         ins.update(ins.endVal + 100);
+   },
+  drawLine() {
+      // 基于准备好的dom，初始化echarts实例
+      let myChart = echarts.init(document.getElementById('myChart'))
+      var data = [
+	    {name:'2016/12/18 6:38:08', value:['2016/12/18 6:38:08', 80]},
+	    {name:'2016/12/18 16:18:18', value:['2016/12/18 16:18:18', 60]},
+	    {name:'2016/12/18 19:18:18', value:['2016/12/18 19:18:18', 90]}
+	    ];
+	  var anchor = [
+	    {name:'2016/12/18 00:00:00', value:['2016/12/18 00:00:00', 0]},
+	    {name:'2016/12/19 00:00:00', value:['2016/12/19 00:00:00', 0]}
+	    ];
+	      // 绘制图表
+      myChart.setOption({
+        title: {
+        text: '动态数据 + 时间坐标轴'
+    },
+    	grid:{
+    		top:-60
+    	},
+    tooltip: {
+        trigger: 'axis',
+        formatter: function (params) {
+            params = params[0];
+            var date = new Date(params.name);
+            return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + ' : ' + params.value[1];
+        },
+        axisPointer: {
+            animation: false
+        }
+    },
+    xAxis: {
+        type: 'time',
+        splitLine: {
+            show: false
+        }
+    },
+    yAxis: {
+        type: 'value',
+        boundaryGap: [0, '60%'], /*数值端两端空白策略*/
+        splitLine: {
+            show: false
+        },
+        axisLine:{
+            show:false
+        }
+    },
+    series: [{
+        name: '模拟数据',
+        type: 'bar',
+        barWidth:3,
+        showSymbol: false,
+        hoverAnimation: false,
+        data: data
+    },
+    {
+        name:'.anchor',
+        type:'bar', 
+        showSymbol:false, 
+        data:anchor,
+        itemStyle:{normal:{opacity:0}},
+        lineStyle:{normal:{opacity:0}}
+    }]
+      });
     }
   },
   computed: {
@@ -95,6 +166,7 @@ export default {
   mounted () {
   	debugger
   	this.$store.dispatch('homeAsync',{param:{percent:80}});
+  	this.drawLine();
 	
   }
 }
@@ -116,12 +188,19 @@ export default {
 	text-align: center;
 	width: calc(33.3%)
 }
+#myChart{
+	width: calc(100%);
+	height: 230px;
+}
+
+
+
+
+
 .vm-progress{
 	margin-left: calc(25%);
 	margin-top: 20px;
 }
-
-
 /*进度条*/
 .vue-progress-path path {
   stroke-width: 12;

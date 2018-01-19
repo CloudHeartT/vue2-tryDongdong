@@ -19,13 +19,9 @@ Vue.config.productionTip = false
 //import Top from '@c/common'  
 //Vue.use(Top);  
 
-
-
-//import 'vue-progress-path/dist/vue-progress-path.css'
-//import VueProgress from 'vue-progress-path'
-//Vue.use(VueProgress)
-
-
+// 引入echarts
+//import echarts from 'echarts'   //全局引入 （会导致体积过大，可在文件里按需引入）
+//Vue.prototype.$echarts = echarts 
 
 import Progress from 'vue-multiple-progress'
 Vue.component('vm-progress', Progress) //可以指定组件名称
